@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   <title>webpack starterkit</title>
+  <!-- incluyo mi header-->
+   <%- include('partials/header') %>
+  </head>
+
+<body>
+  <!--Div principal -->
+  <div id="divGeneral" >
+	<!--Contenedor Seguimiento sesion -->
+    <div class="card">
+		   <!--header-->            	
+        <div class="card-header">
+           <h7 id="idTituloEncabezado">Reto 1 --Día 2</h7>
+        </div>
+        <!--body-->
+        <div class="card-body border-bottom">
+          
+          <!--tabla de contenido  -->
+          <table id="tablaContenido"  class="table">
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Costo</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Numero de piezas existentes</th>
+                <th scope="col">Agregar a Carrito</th>
+              </tr>
+            </thead>
+            <% productos.forEach(function(producto,index) { %>
+              <tr>
+                <th><%= index %></th>
+                <td><%= producto.name %></td>
+                <td><%= producto.costo %></td>
+                <td><%= producto.categoria %></td>
+                <td><%= producto.piezas %></td>
+                <td><button class="btn btn-success">Agregar Carrito</button></td> 
+              </tr>
+             <%})%>
+
+          </table>
+          </br>
+          <div class="row">
+            <div class="col-sm-4"><input type="text" id="name" placeholder="Nombre" required/></div>
+            <div class="col-sm-4"><input type="text" id="lastName" placeholder="apellido" required/></div>
+            <div class="col-sm-4"><input type="text" id="age" placeholder="Edad" required/></div>
+          </div>
+          </br>
+          <div class="row">
+            <div class="col-sm-2"><button class="btn btn-success" onclick="app.agregarFin()">Actualizar</button></div>
+            <div class="col-sm-2"><button class="btn btn-success" onclick="app.agregarInicio()">Agregar a Inicio</button></div>
+            <div class="col-sm-2"><button class="btn btn-success" onclick="app.agregarFin()"> Agregar a Fin</button> </div>
+            <div class="col-sm-2"><button class="btn btn-success" onclick="app.borrarInicio()">Borrar Inicio</button></div>
+            <div class="col-sm-3"><button class="btn btn-success" onclick="app.borrarFin()">Borrar fin</button></div>
+          </div>
+          </br>
+          
+          <div class="row">
+            <div class="col-sm-2"><input type="text" id="filtar" placeholder="Valor a filtrar" /> </div>
+            <div class="col-sm-2"><button class="btn btn-success" onclick="app.filtar()">Filtar</button> </div>
+          </div>
+        
+          </br>
+          
+          <table id="tablaFilter"  class="table">
+            <thead class="thead-light">
+              <tr>
+                <th>Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+
+      </div><!--Fin de div contendor-->
+  </div><!--Fin de div principal -->  
+</body>
+</html>
